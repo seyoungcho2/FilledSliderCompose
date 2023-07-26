@@ -9,8 +9,12 @@
 
 # What's Filled Slider Compose
 FilledSlider is a customizable slider component built with Jetpack Compose, featuring a visually appealing filled track. It offers smooth and precise control over various settings and can be easily integrated into your Android app or project. With options for different colors, orientations, and progression types, FilledSlider enhances the user experience and adds a touch of elegance to your user interface.
-
-
+<br><br>
+# Preview
+<br><br>
+<p align="center">
+    <img src="https://github.com/seyoungcho2/FilledSliderCompose/assets/59521473/467eace9-c776-419d-a9ae-f3494c4d04ca" alt="animated" />
+</p>
 
 
 <br><br>
