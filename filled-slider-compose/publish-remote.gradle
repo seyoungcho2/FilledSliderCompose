@@ -1,6 +1,6 @@
 ext {
     PUBLISH_GROUP_ID = 'io.github.seyoungcho2'
-    PUBLISH_VERSION = '0.0.1'
+    PUBLISH_VERSION = '1.0.0'
     PUBLISH_ARTIFACT_ID = 'filled-slider-compose'
 }
 
