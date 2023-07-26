@@ -148,6 +148,7 @@ fun RoundedCornerShapeSlider() {
 <br>
 
 #### SliderType makes slider progression to be Discrete or Continuous.
+
 <br>
 
 * SliderType.Continuous : SliderType.Continuous makes slider progression changes continuously.
@@ -172,6 +173,7 @@ fun ContinuousSlider() {
 ```
 
 * SliderType.Discrete : SliderType.Discrete makes slider progression changes discretely.
+* 
 ```kotlin
 @Composable
 fun DiscreteSlider() {
@@ -194,6 +196,7 @@ fun DiscreteSlider() {
 <br><br>
   
 ## sliderOrientation
+
 <p align="center">
     <img src="https://github.com/seyoungcho2/FilledSliderCompose/assets/59521473/a198f1e3-1377-4434-8370-1ad649569556" alt="animated" />
 </p>
@@ -201,6 +204,7 @@ fun DiscreteSlider() {
 <br>
 
 #### SliderOrientation is responsible for controlling the dragging behavior of the slider component.
+
 <br>
 
 * SliderOrientation.Horizontal: SliderOrientation.Horizontal makes slider progression to be changed by dragging right or left along the x-axis.
