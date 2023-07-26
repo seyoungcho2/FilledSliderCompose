@@ -14,7 +14,7 @@ import androidx.compose.ui.unit.dp
 fun CardRow(modifier: Modifier, content: @Composable RowScope.() -> Unit) {
     Card(
         modifier = modifier,
-        shape = RoundedCornerShape(0.dp)
+        shape = RoundedCornerShape(24.dp)
     ) {
         Row(
             modifier = Modifier
