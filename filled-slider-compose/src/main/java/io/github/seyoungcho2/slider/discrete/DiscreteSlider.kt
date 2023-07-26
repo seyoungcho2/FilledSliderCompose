@@ -70,7 +70,7 @@ internal fun DiscreteSlider(
             },
         onDraw = {
             drawRect(
-                color = sliderColor.enabledTrackColor,
+                color = sliderColor.getTrackColor(isEnabled),
                 topLeft = Offset.Zero,
                 size = size,
                 style = Fill
@@ -79,7 +79,7 @@ internal fun DiscreteSlider(
             val indicatorRatio = sliderLengthCalculator.getCurrentRatio(currentValue)
 
             drawRect(
-                color = Color.Blue,
+                color = sliderColor.getIndicationColor(isEnabled),
                 topLeft = sliderLengthCalculator.getTopLeft(sliderOrientation, size, indicatorRatio),
                 size = sliderLengthCalculator.getSize(sliderOrientation, size, indicatorRatio),
                 style = Fill

@@ -31,16 +31,16 @@ internal fun ContinuousSlider(
 ) {
     val currentValueUpdated by rememberUpdatedState(
         newValue = when {
-            currentValue < valueRange.start -> valueRange.start
+            currentValue < valueRange.start        -> valueRange.start
             currentValue > valueRange.endInclusive -> valueRange.endInclusive
-            else                    -> currentValue
+            else                                   -> currentValue
         }
     )
     Canvas(
         modifier = modifier
             .clip(sliderShape)
             .pointerInput(isEnabled) {
-                if(!isEnabled) return@pointerInput
+                if (!isEnabled) return@pointerInput
                 detectDragGestures { _, dragAmount ->
                     val draggedValue = when (sliderOrientation) {
                         is SliderOrientation.Vertical   -> sliderLengthCalculator.calculateDragLength(dragAmount.y / size.height)
@@ -52,7 +52,7 @@ internal fun ContinuousSlider(
             },
         onDraw = {
             drawRect(
-                color = sliderColor.enabledTrackColor,
+                color = sliderColor.getTrackColor(isEnabled),
                 topLeft = Offset.Zero,
                 size = size,
                 style = Fill
@@ -61,7 +61,7 @@ internal fun ContinuousSlider(
             val indicatorRatio = sliderLengthCalculator.getCurrentRatio(currentValue)
 
             drawRect(
-                color = Color.Blue,
+                color = sliderColor.getIndicationColor(isEnabled),
                 topLeft = sliderLengthCalculator.getTopLeft(sliderOrientation, size, indicatorRatio),
                 size = sliderLengthCalculator.getSize(sliderOrientation, size, indicatorRatio),
                 style = Fill

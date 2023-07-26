@@ -13,4 +13,16 @@ data class SliderColor(
     val disabledTrackColor: Color = enabledTrackColor,
     val enabledIndicationColor: Color = Color.Black,
     val disabledIndicationColor: Color = enabledIndicationColor
-)
+) {
+    fun getTrackColor(isEnabled: Boolean) = if (isEnabled) {
+        enabledTrackColor
+    } else {
+        disabledTrackColor
+    }
+
+    fun getIndicationColor(isEnabled: Boolean) = if (isEnabled) {
+        enabledIndicationColor
+    } else {
+        disabledIndicationColor
+    }
+}
