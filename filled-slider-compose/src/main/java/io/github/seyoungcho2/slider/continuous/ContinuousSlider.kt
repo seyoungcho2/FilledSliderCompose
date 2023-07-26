@@ -44,7 +44,7 @@ internal fun ContinuousSlider(
                 detectDragGestures { _, dragAmount ->
                     val draggedValue = when (sliderOrientation) {
                         is SliderOrientation.Vertical   -> sliderLengthCalculator.calculateDragLength(dragAmount.y / size.height)
-                        is SliderOrientation.Horizontal -> sliderLengthCalculator.calculateDragLength(dragAmount.x / size.width)
+                        is SliderOrientation.Horizontal -> sliderLengthCalculator.calculateDragLength(-dragAmount.x / size.width)
                     }
                     val newValue = currentValueUpdated + draggedValue * dragSensitivity
                     setCurrentValue(newValue)
