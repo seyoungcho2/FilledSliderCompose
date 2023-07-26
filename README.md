@@ -173,7 +173,8 @@ fun ContinuousSlider() {
 ```
 
 * SliderType.Discrete : SliderType.Discrete makes slider progression changes discretely.
-* 
+
+
 ```kotlin
 @Composable
 fun DiscreteSlider() {
