@@ -5,12 +5,13 @@ import androidx.compose.ui.geometry.Size
 import io.github.seyoungcho2.slider.model.SliderOrientation
 
 internal class SliderLengthCalculator(
-    private val maxValue: Float,
+    maxValue: Float,
     private val minValue: Float
 ) {
     private val valueLength = maxValue - minValue
 
     fun getCurrentRatio(currentValue: Float): Float {
+        if(valueLength == 0f) return 1f
         val currentValueLength: Float = if (currentValue > minValue)
             currentValue - minValue
         else

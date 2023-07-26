@@ -23,28 +23,30 @@ import io.github.seyoungcho2.slider.model.SliderOrientation
 internal fun DiscreteSlider(
     modifier: Modifier,
     sliderShape: Shape,
+    isEnabled: Boolean,
     sliderColor: SliderColor,
     sliderOrientation: SliderOrientation,
     dragSensitivity: Float,
     sliderLengthCalculator: SliderLengthCalculator,
     discreteSliderCalculator: DiscreteSliderCalculator,
-    maxValue: Float,
-    minValue: Float,
+    valueRange: ClosedFloatingPointRange<Float> = 0f..1f,
     currentValue: Float,
     setCurrentValue: (Float) -> Unit
 ) {
     val currentValueUpdated by rememberUpdatedState(
         newValue = when {
-            currentValue < minValue -> minValue
-            currentValue > maxValue -> maxValue
-            else                    -> currentValue
+            currentValue < valueRange.start        -> valueRange.start
+            currentValue > valueRange.endInclusive -> valueRange.endInclusive
+            else                                   -> currentValue
         }
     )
     var tmpDraggedValue by remember { mutableStateOf(0f) }
     Canvas(
         modifier = modifier
             .clip(sliderShape)
-            .pointerInput(true) {
+            .pointerInput(isEnabled) {
+                if (!isEnabled) return@pointerInput
+
                 detectDragGestures(
                     onDragStart = {
                         tmpDraggedValue = 0f
@@ -68,7 +70,7 @@ internal fun DiscreteSlider(
             },
         onDraw = {
             drawRect(
-                color = sliderColor.trackColor,
+                color = sliderColor.enabledTrackColor,
                 topLeft = Offset.Zero,
                 size = size,
                 style = Fill

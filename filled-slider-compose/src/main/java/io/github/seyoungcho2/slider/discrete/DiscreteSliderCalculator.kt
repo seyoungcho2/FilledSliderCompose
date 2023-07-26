@@ -1,9 +1,9 @@
 package io.github.seyoungcho2.slider.discrete
 
 class DiscreteSliderCalculator(
-    private val maxValue: Float,
-    private val minValue: Float,
-    private val steps: Int
+    maxValue: Float,
+    minValue: Float,
+    steps: Int
 ) {
     private val valueLength = maxValue - minValue
 

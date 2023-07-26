@@ -20,26 +20,27 @@ import io.github.seyoungcho2.slider.model.SliderOrientation
 internal fun ContinuousSlider(
     modifier: Modifier,
     sliderShape: Shape,
+    isEnabled: Boolean,
     sliderColor: SliderColor,
     sliderOrientation: SliderOrientation,
     dragSensitivity: Float,
     sliderLengthCalculator: SliderLengthCalculator,
-    maxValue: Float,
-    minValue: Float,
+    valueRange: ClosedFloatingPointRange<Float> = 0f..1f,
     currentValue: Float,
     setCurrentValue: (Float) -> Unit
 ) {
     val currentValueUpdated by rememberUpdatedState(
         newValue = when {
-            currentValue < minValue -> minValue
-            currentValue > maxValue -> maxValue
+            currentValue < valueRange.start -> valueRange.start
+            currentValue > valueRange.endInclusive -> valueRange.endInclusive
             else                    -> currentValue
         }
     )
     Canvas(
         modifier = modifier
             .clip(sliderShape)
-            .pointerInput(true) {
+            .pointerInput(isEnabled) {
+                if(!isEnabled) return@pointerInput
                 detectDragGestures { _, dragAmount ->
                     val draggedValue = when (sliderOrientation) {
                         is SliderOrientation.Vertical   -> sliderLengthCalculator.calculateDragLength(dragAmount.y / size.height)
@@ -51,7 +52,7 @@ internal fun ContinuousSlider(
             },
         onDraw = {
             drawRect(
-                color = sliderColor.trackColor,
+                color = sliderColor.enabledTrackColor,
                 topLeft = Offset.Zero,
                 size = size,
                 style = Fill

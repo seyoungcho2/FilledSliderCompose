@@ -4,6 +4,9 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Slider
 import androidx.compose.material3.Text
@@ -25,14 +28,14 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             ComposeSliderTheme {
-                // A surface container using the 'background' color from the theme
-                Box() {
-                    var currentValue by remember { mutableStateOf(-100f) }
+                Row(modifier = Modifier.fillMaxSize()) {
+                    var currentValue by remember { mutableStateOf(0.2f) }
                     FilledSlider(
                         modifier = Modifier.size(100.dp, 300.dp),
                         sliderColor = SliderColor(),
                         currentValue = currentValue,
                         sliderType = SliderType.Discrete(10),
+                        valueRange = 0f..100f,
                         setCurrentValue = {
                             currentValue = it
                             println("currentValue >> ${currentValue}")
@@ -44,18 +47,3 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    ComposeSliderTheme {
-        Greeting("Android")
-    }
-}
