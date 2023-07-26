@@ -2,7 +2,6 @@ package io.github.seyoungcho2.slider
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.ui.Modifier
@@ -83,12 +82,6 @@ fun FilledSlider(
                 valueRange = valueRange,
                 setCurrentValue = setCurrentValue
             )
-        }
-    }
-
-    LaunchedEffect(key1 = valueRange) {
-        require(valueRange.endInclusive > valueRange.start) {
-            "start and end point of valueRange shouldn't be same"
         }
     }
 }
