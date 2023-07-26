@@ -88,7 +88,9 @@ fun FilledSlider(
 </p>
 
 <br>
+
 #### Pass class which implements [Shape](https://foso.github.io/Jetpack-Compose-Playground/foundation/shape/) on Compose.
+
 <br>
 
 * RectangleShape
