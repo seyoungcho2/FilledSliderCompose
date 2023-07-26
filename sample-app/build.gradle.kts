@@ -49,7 +49,6 @@ android {
 }
 
 dependencies {
-
     implementation(project(":filled-slider-compose"))
     implementation("androidx.core:core-ktx:${LibraryVersions.androidCore}")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:${LibraryVersions.lifecycleRuntime}")
