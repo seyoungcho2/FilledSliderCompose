@@ -83,7 +83,10 @@ fun FilledSlider(
 <br>
 
 ## sliderShape
-![sliderShape](https://github.com/seyoungcho2/FilledSliderCompose/assets/59521473/af064146-e7dc-41bf-b473-faa40cbb6b4c)
+<p align="center">
+    <img src="https://github.com/seyoungcho2/FilledSliderCompose/assets/59521473/af064146-e7dc-41bf-b473-faa40cbb6b4c" alt="animated" />
+</p>
+
 <br>
 #### Pass class which implements [Shape](https://foso.github.io/Jetpack-Compose-Playground/foundation/shape/) on Compose.
 <br>
@@ -135,7 +138,10 @@ fun RoundedCornerShapeSlider() {
 <br><br>
 
 ## sliderType
-![sliderType](https://github.com/seyoungcho2/FilledSliderCompose/assets/59521473/13561959-d385-43c7-9a02-a5b5c9c72ffc)
+<p align="center">
+    <img src="https://github.com/seyoungcho2/FilledSliderCompose/assets/59521473/13561959-d385-43c7-9a02-a5b5c9c72ffc" alt="animated" />
+</p>
+
 <br>
 #### SliderType makes slider progression to be Discrete or Continuous.
 <br>
@@ -184,7 +190,10 @@ fun DiscreteSlider() {
 <br><br>
   
 ## sliderOrientation
-![sliderOrientation](https://github.com/seyoungcho2/FilledSliderCompose/assets/59521473/a198f1e3-1377-4434-8370-1ad649569556)
+<p align="center">
+    <img src="https://github.com/seyoungcho2/FilledSliderCompose/assets/59521473/a198f1e3-1377-4434-8370-1ad649569556" alt="animated" />
+</p>
+
 <br>
 #### SliderOrientation is responsible for controlling the dragging behavior of the slider component.
 <br>
@@ -234,7 +243,9 @@ fun VerticalSlider() {
 ```
 
 ## dragSensitivity
-![dragSensitivity](https://github.com/seyoungcho2/FilledSliderCompose/assets/59521473/551e529a-79bc-458a-8d88-95145f07a8e5)
+<p align="center">
+    <img src="https://github.com/seyoungcho2/FilledSliderCompose/assets/59521473/551e529a-79bc-458a-8d88-95145f07a8e5" alt="animated" />
+</p>
 
 #### Sensitivity for drag. Default is set to 1 which means indication changes as dragged amount.
 
