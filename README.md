@@ -121,7 +121,7 @@ fun RoundedCornerShapeSlider() {
     var currentValue by remember { mutableStateOf(20f) }
     FilledSlider(
         modifier = Modifier.size(50.dp, 150.dp),
-        sliderShape= RoundedCornerShape(0),
+        sliderShape= RoundedCornerShape(50),
         sliderColor = SliderColor(
             enabledTrackColor = Color(0xFFC6B8FF),
             enabledIndicationColor = Color(0xFF7D5FFF)
