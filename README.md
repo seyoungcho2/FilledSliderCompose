@@ -83,6 +83,26 @@ fun FilledSlider(
 
 <br>
 
+## sliderColor
+SliderColor consist of 4 properties enabledTrackColor, disabledTrackColor, enabledIndicationColor, disabledIndicationColor
+
+
+```
+data class SliderColor(
+    val enabledTrackColor: Color = Color.Gray,
+    val disabledTrackColor: Color = enabledTrackColor,
+    val enabledIndicationColor: Color = Color.Black,
+    val disabledIndicationColor: Color = enabledIndicationColor
+)
+```
+
+ * enabledTrackColor: Track color when the slider is enabled.
+ * disabledTrackColor: Track color when the slider is disabled.
+ * enabledIndicationColor: Indication color for progression when the slider is enabled
+ * disabledIndicationColor: Indication color for progression when the slider is disabled.
+
+<br>
+
 ## sliderShape
 <p align="center">
     <img src="https://github.com/seyoungcho2/FilledSliderCompose/assets/59521473/af064146-e7dc-41bf-b473-faa40cbb6b4c" alt="animated" />
@@ -91,8 +111,6 @@ fun FilledSlider(
 <br>
 
 #### Pass class which implements [Shape](https://foso.github.io/Jetpack-Compose-Playground/foundation/shape/) on Compose.
-
-<br>
 
 * RectangleShape
 ```kotlin
@@ -149,7 +167,6 @@ fun RoundedCornerShapeSlider() {
 
 #### SliderType makes slider progression to be Discrete or Continuous.
 
-<br>
 
 * SliderType.Continuous : SliderType.Continuous makes slider progression changes continuously.
 ```kotlin
@@ -206,7 +223,6 @@ fun DiscreteSlider() {
 
 #### SliderOrientation is responsible for controlling the dragging behavior of the slider component.
 
-<br>
 
 * SliderOrientation.Horizontal: SliderOrientation.Horizontal makes slider progression to be changed by dragging right or left along the x-axis.
 
