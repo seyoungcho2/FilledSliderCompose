@@ -83,26 +83,6 @@ fun FilledSlider(
 
 <br>
 
-## sliderColor
-SliderColor consist of 4 properties enabledTrackColor, disabledTrackColor, enabledIndicationColor, disabledIndicationColor
-
-
-```
-data class SliderColor(
-    val enabledTrackColor: Color = Color.Gray,
-    val disabledTrackColor: Color = enabledTrackColor,
-    val enabledIndicationColor: Color = Color.Black,
-    val disabledIndicationColor: Color = enabledIndicationColor
-)
-```
-
- * enabledTrackColor: Track color when the slider is enabled.
- * disabledTrackColor: Track color when the slider is disabled.
- * enabledIndicationColor: Indication color for progression when the slider is enabled
- * disabledIndicationColor: Indication color for progression when the slider is disabled.
-
-<br>
-
 ## sliderShape
 <p align="center">
     <img src="https://github.com/seyoungcho2/FilledSliderCompose/assets/59521473/af064146-e7dc-41bf-b473-faa40cbb6b4c" alt="animated" />
@@ -157,6 +137,27 @@ fun RoundedCornerShapeSlider() {
 ```
 
 <br><br>
+
+## sliderColor
+SliderColor consist of 4 properties enabledTrackColor, disabledTrackColor, enabledIndicationColor, disabledIndicationColor
+
+
+```
+data class SliderColor(
+    val enabledTrackColor: Color = Color.Gray,
+    val disabledTrackColor: Color = enabledTrackColor,
+    val enabledIndicationColor: Color = Color.Black,
+    val disabledIndicationColor: Color = enabledIndicationColor
+)
+```
+
+ * enabledTrackColor: Track color when the slider is enabled.
+ * disabledTrackColor: Track color when the slider is disabled.
+ * enabledIndicationColor: Indication color for progression when the slider is enabled
+ * disabledIndicationColor: Indication color for progression when the slider is disabled.
+
+<br>
+
 
 ## sliderType
 <p align="center">
