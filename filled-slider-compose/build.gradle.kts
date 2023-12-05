@@ -5,6 +5,7 @@ apply {
 }
 
 plugins {
+    id("org.jetbrains.compose")
     id("com.android.library")
     kotlin("multiplatform")
 }
@@ -39,22 +40,17 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 // Compose Support
-                val composeBom = platform("androidx.compose:compose-bom:${LibraryVersions.composeBom}")
-                implementation(composeBom)
-                implementation("androidx.compose.material3:material3")
-                implementation("androidx.compose.ui:ui")
+                api(compose.runtime)
+                api(compose.ui)
+                api(compose.foundation)
+                api(compose.material3)
             }
-            kotlin.srcDirs("src/main")
         }
         val commonTest by getting {
             dependencies {
                 // Test
                 implementation("junit:junit:${LibraryVersions.junit}")
-
-                // Compose Android Studio Preview support
-                implementation("androidx.compose.ui:ui-tooling")
             }
-            kotlin.srcDirs("src/test")
         }
         val androidMain by getting {
             dependencies {
@@ -67,20 +63,16 @@ kotlin {
         }
         val androidUnitTest by getting {
             dependencies {
-                // Compose Support
-                val composeBom = platform("androidx.compose:compose-bom:${LibraryVersions.composeBom}")
-                implementation(composeBom)
-
                 // Test
-                implementation("androidx.test.ext:junit:${LibraryVersions.androidJUnit}")
-                implementation("androidx.test.espresso:espresso-core:${LibraryVersions.espresso}")
+                implementation("junit:junit:${LibraryVersions.junit}")
+
+                // Compose Android Studio Preview support
+                implementation("androidx.compose.ui:ui-tooling")
             }
-            kotlin.srcDirs("src/androidTest")
         }
         val desktopMain by getting {
             dependencies {
-                // Compose Android Studio Preview support
-                implementation("androidx.compose.ui:ui-tooling")
+                api(compose.preview)
             }
         }
         val desktopTest by getting
