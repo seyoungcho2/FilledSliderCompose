@@ -173,7 +173,7 @@
     			);
     			runOnlyForDeploymentPostprocessing = 0;
     			shellPath = /bin/sh;
-    			shellScript = "cd \"$SRCROOT/..\"\n./gradlew :common:embedAndSignAppleFrameworkForXcode\n";
+    			shellScript = "cd \"$SRCROOT/..\"\n./gradlew :sample-app:embedAndSignAppleFrameworkForXcode\n";
     		};
     /* End PBXShellScriptBuildPhase section */
 
@@ -315,9 +315,10 @@
     				ENABLE_PREVIEWS = YES;
     				FRAMEWORK_SEARCH_PATHS = (
     					"$(inherited)",
-					"$(SRCROOT)/../common/build/xcode-frameworks/$(CONFIGURATION)/$(SDK_NAME)"
+					"$(SRCROOT)/../sample-app/build/xcode-frameworks/$(CONFIGURATION)/$(SDK_NAME)"
 				);
     				INFOPLIST_FILE = ios/Info.plist;
+            IPHONEOS_DEPLOYMENT_TARGET = 16.0;
     				LD_RUNPATH_SEARCH_PATHS = (
     					"$(inherited)",
     					"@executable_path/Frameworks",
@@ -325,7 +326,7 @@
     				OTHER_LDFLAGS = (
     					"$(inherited)",
     					"-framework",
-    					common,
+    					sample-app,
     				);
     				PRODUCT_BUNDLE_IDENTIFIER = orgIdentifier.ios;
     				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -343,9 +344,10 @@
     				ENABLE_PREVIEWS = YES;
     				FRAMEWORK_SEARCH_PATHS = (
     					"$(inherited)",
-    					"$(SRCROOT)/../common/build/xcode-frameworks/$(CONFIGURATION)/$(SDK_NAME)"
+    					"$(SRCROOT)/../sample-app/build/xcode-frameworks/$(CONFIGURATION)/$(SDK_NAME)"
     				);
     				INFOPLIST_FILE = ios/Info.plist;
+            IPHONEOS_DEPLOYMENT_TARGET = 16.0;
     				LD_RUNPATH_SEARCH_PATHS = (
     					"$(inherited)",
     					"@executable_path/Frameworks",
@@ -353,7 +355,7 @@
     				OTHER_LDFLAGS = (
     					"$(inherited)",
     					"-framework",
-    					common,
+    					sample-app,
     				);
     				PRODUCT_BUNDLE_IDENTIFIER = orgIdentifier.ios;
     				PRODUCT_NAME = "$(TARGET_NAME)";
