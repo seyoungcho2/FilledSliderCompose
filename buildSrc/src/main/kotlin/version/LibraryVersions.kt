@@ -8,6 +8,7 @@ object LibraryVersions {
     // Compose
     val composeComplier = "1.5.3"
     val activityCompose = "1.7.1"
+    val skiko = "0.7.77"
 
     // Lifecycle
     val lifecycleRuntime = "2.6.1"
