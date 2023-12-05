@@ -11,4 +11,4 @@ val robotoFontFamily = FontFamily(
     Font(R.font.roboto_regular, FontWeight.Normal, FontStyle.Normal)
 )
 
-actual fun getAppFontFamily(): FontFamily? = robotoFontFamily
+actual fun getAppFontFamily(): FontFamily = robotoFontFamily

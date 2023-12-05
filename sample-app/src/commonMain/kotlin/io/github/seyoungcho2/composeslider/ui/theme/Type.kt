@@ -7,7 +7,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.sp
 
 
-expect fun getAppFontFamily(): FontFamily?
+expect fun getAppFontFamily(): FontFamily
 
 // Set of Material typography styles to start with
 val Typography = Typography(
