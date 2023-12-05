@@ -44,7 +44,7 @@ kotlin {
                 implementation("androidx.compose.material3:material3")
                 implementation("androidx.compose.ui:ui")
             }
-            kotlin.srcDirs("src/main/java")
+            kotlin.srcDirs("src/main")
         }
         val commonTest by getting {
             dependencies {
@@ -54,7 +54,7 @@ kotlin {
                 // Compose Android Studio Preview support
                 implementation("androidx.compose.ui:ui-tooling")
             }
-            kotlin.srcDirs("src/test/java")
+            kotlin.srcDirs("src/test")
         }
         val androidMain by getting {
             dependencies {
@@ -75,7 +75,7 @@ kotlin {
                 implementation("androidx.test.ext:junit:${LibraryVersions.androidJUnit}")
                 implementation("androidx.test.espresso:espresso-core:${LibraryVersions.espresso}")
             }
-            kotlin.srcDirs("src/androidTest/java")
+            kotlin.srcDirs("src/androidTest")
         }
         val desktopMain by getting {
             dependencies {
