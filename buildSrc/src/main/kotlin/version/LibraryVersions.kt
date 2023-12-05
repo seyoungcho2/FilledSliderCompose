@@ -6,7 +6,7 @@ object LibraryVersions {
     val appCompat = "1.6.1"
 
     // Compose
-    val composeComplier = "1.4.2"
+    val composeComplier = "1.5.0"
     val composeBom = "2023.04.01"
     val activityCompose = "1.7.1"
 
