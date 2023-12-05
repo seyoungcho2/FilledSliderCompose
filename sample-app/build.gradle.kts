@@ -29,6 +29,7 @@ kotlin {
     ).forEach {
         it.binaries.framework {
             baseName = "sampleapp"
+            isStatic = true
         }
     }
 

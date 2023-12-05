@@ -326,7 +326,7 @@
     				OTHER_LDFLAGS = (
     					"$(inherited)",
     					"-framework",
-    					sample-app,
+    					sampleapp,
     				);
     				PRODUCT_BUNDLE_IDENTIFIER = orgIdentifier.ios;
     				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -355,7 +355,7 @@
     				OTHER_LDFLAGS = (
     					"$(inherited)",
     					"-framework",
-    					sample-app,
+    					sampleapp,
     				);
     				PRODUCT_BUNDLE_IDENTIFIER = orgIdentifier.ios;
     				PRODUCT_NAME = "$(TARGET_NAME)";
