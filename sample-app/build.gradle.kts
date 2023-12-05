@@ -1,6 +1,7 @@
 import version.LibraryVersions
 
 plugins {
+    id("org.jetbrains.compose")
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
 }
@@ -39,9 +40,9 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.2"
+        kotlinCompilerExtensionVersion = LibraryVersions.composeComplier
     }
-    packagingOptions {
+    packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
@@ -55,11 +56,10 @@ dependencies {
     implementation("androidx.activity:activity-compose:${LibraryVersions.activityCompose}")
 
     // Compose
-    val composeBom = platform("androidx.compose:compose-bom:${LibraryVersions.composeBom}")
-    implementation(composeBom)
-    androidTestImplementation(composeBom)
-    implementation("androidx.compose.material3:material3")
-    implementation("androidx.compose.ui:ui")
+    implementation(compose.runtime)
+    implementation(compose.ui)
+    implementation(compose.foundation)
+    implementation(compose.material3)
     implementation("androidx.compose.ui:ui-tooling-preview")
     debugImplementation("androidx.compose.ui:ui-tooling")
 
