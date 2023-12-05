@@ -7,7 +7,6 @@ object LibraryVersions {
 
     // Compose
     val composeComplier = "1.5.0"
-    val composeBom = "2023.04.01"
     val activityCompose = "1.7.1"
 
     // Lifecycle
