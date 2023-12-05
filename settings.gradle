@@ -17,5 +17,6 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "ComposeSlider"
-include ':sample-app'
+//include ':sample-app'
+include ':sample-app:target:android'
 include ':filled-slider-compose'
