@@ -50,7 +50,7 @@ android {
 }
 
 dependencies {
-    implementation(project(":filled-slider-compose"))
+    implementation(project(":sample-app"))
     implementation("androidx.core:core-ktx:${LibraryVersions.androidCore}")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:${LibraryVersions.lifecycleRuntime}")
     implementation("androidx.activity:activity-compose:${LibraryVersions.activityCompose}")
