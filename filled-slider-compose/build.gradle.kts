@@ -6,7 +6,95 @@ apply {
 
 plugins {
     id("com.android.library")
-    id("org.jetbrains.kotlin.android")
+    kotlin("multiplatform")
+}
+
+kotlin {
+    androidTarget {
+        compilations.all {
+            kotlinOptions {
+                jvmTarget = JavaVersion.VERSION_1_8.toString()
+            }
+        }
+    }
+
+    jvm("desktop") {
+        compilations.all {
+            kotlinOptions.jvmTarget = JavaVersion.VERSION_11.toString()
+        }
+    }
+
+    ios()
+    listOf(
+        iosX64(),
+        iosArm64(),
+        iosSimulatorArm64()
+    ).forEach {
+        it.binaries.framework {
+            baseName = "filledslider"
+        }
+    }
+
+    sourceSets {
+        val commonMain by getting {
+            dependencies {
+                // Compose Support
+                val composeBom = platform("androidx.compose:compose-bom:${LibraryVersions.composeBom}")
+                implementation(composeBom)
+                implementation("androidx.compose.material3:material3")
+                implementation("androidx.compose.ui:ui")
+            }
+            kotlin.srcDirs("src/main")
+        }
+        val commonTest by getting {
+            dependencies {
+                // Test
+                implementation("junit:junit:${LibraryVersions.junit}")
+
+                // Compose Android Studio Preview support
+                implementation("androidx.compose.ui:ui-tooling")
+            }
+            kotlin.srcDirs("src/test")
+        }
+        val androidMain by getting {
+            dependencies {
+                implementation("androidx.core:core-ktx:${LibraryVersions.androidCore}")
+                implementation("androidx.appcompat:appcompat:${LibraryVersions.appCompat}")
+
+                // Compose Android Studio Preview support
+                implementation("androidx.compose.ui:ui-tooling-preview")
+            }
+        }
+        val androidUnitTest by getting {
+            dependencies {
+                // Compose Support
+                val composeBom = platform("androidx.compose:compose-bom:${LibraryVersions.composeBom}")
+                implementation(composeBom)
+
+                // Test
+                implementation("androidx.test.ext:junit:${LibraryVersions.androidJUnit}")
+                implementation("androidx.test.espresso:espresso-core:${LibraryVersions.espresso}")
+            }
+            kotlin.srcDirs("src/androidTest")
+        }
+        val desktopMain by getting {
+            dependencies {
+                // Compose Android Studio Preview support
+                implementation("androidx.compose.ui:ui-tooling")
+            }
+        }
+        val desktopTest by getting
+        val iosX64Main by getting
+        val iosArm64Main by getting
+        val iosSimulatorArm64Main by getting
+        val iosMain by getting {
+            dependencies {
+            }
+            iosX64Main.dependsOn(this)
+            iosArm64Main.dependsOn(this)
+            iosSimulatorArm64Main.dependsOn(this)
+        }
+    }
 }
 
 android {
@@ -37,29 +125,4 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
-
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
-}
-
-dependencies {
-    implementation("androidx.core:core-ktx:${LibraryVersions.androidCore}")
-    implementation("androidx.appcompat:appcompat:${LibraryVersions.appCompat}")
-
-    // Compose Support
-    val composeBom = platform("androidx.compose:compose-bom:${LibraryVersions.composeBom}")
-    implementation(composeBom)
-    androidTestImplementation(composeBom)
-    implementation("androidx.compose.material3:material3")
-    implementation("androidx.compose.ui:ui")
-
-    // Compose Android Studio Preview support
-    implementation("androidx.compose.ui:ui-tooling-preview")
-    debugImplementation("androidx.compose.ui:ui-tooling")
-
-    // Test
-    testImplementation("junit:junit:${LibraryVersions.junit}")
-    androidTestImplementation("androidx.test.ext:junit:${LibraryVersions.androidJUnit}")
-    androidTestImplementation("androidx.test.espresso:espresso-core:${LibraryVersions.espresso}")
 }
